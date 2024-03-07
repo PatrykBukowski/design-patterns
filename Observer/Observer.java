@@ -2,10 +2,10 @@
 
 import java.util.ArrayList;
 
- interface ZaktualizujInterface{
+interface ZaktualizujInterface{
 }
 
- class StandardZaktualizuje implements ZaktualizujInterface {
+class StandardZaktualizuje implements ZaktualizujInterface {
   float temp;
   float wilgotnosc;
   float cisnienie;
@@ -18,21 +18,21 @@ import java.util.ArrayList;
 }
 
 // INFO: Interface dla observer
- interface Podmiot {
+interface Podmiot {
   public void zarejestrujObserwatora (Obserwator o);
   public void usunObserwatora(Obserwator o);
   public void powiadomObserwatorow();
 }
 
- interface Obserwator {
+interface Obserwator {
   public void aktualizacja(float temp, float wilgotnosc, float cisnienie);
 }
 
- interface WyswietlElement {
+interface WyswietlElement {
   public void wyswietl();
 }
 
- class DanePogodowe implements Podmiot {
+class DanePogodowe implements Podmiot {
   private ArrayList obserwatorzy;
   private float temperatura;
   private float wilgotnosc;
@@ -72,7 +72,7 @@ import java.util.ArrayList;
   }
 }
 
- class WarunkiBiezaceWyswietl implements Obserwator, WyswietlElement {
+class WarunkiBiezaceWyswietl implements Obserwator, WyswietlElement {
   private float temperatura;
   private float wilgotnosc;
   private Podmiot danePogodowe;
@@ -93,7 +93,7 @@ import java.util.ArrayList;
   }
 }
 
- class StatystykaWyswietl implements Obserwator, WyswietlElement {
+class StatystykaWyswietl implements Obserwator, WyswietlElement {
   private ArrayList<Float> temperatura;
   private ArrayList<Float> wilgotnosc;
   private Podmiot danePogodowe;
@@ -131,7 +131,7 @@ import java.util.ArrayList;
   }
 }
 
- class PrognozaWyswietl implements Obserwator, WyswietlElement {
+class PrognozaWyswietl implements Obserwator, WyswietlElement {
   private float temperaturaPrev;
   private float temperatura;
   private float wilgotnoscPrev;
